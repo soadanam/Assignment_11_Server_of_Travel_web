@@ -12,9 +12,13 @@ const port = 7777;
 app.use(express.json());
 app.use(cors());
 
-
 // userId: mongodb7
 // userPass: W9cFGIBkpAkFakaS
+
+
+
+
+
 
 
 // Mongodb CONNECTion URI
@@ -22,8 +26,7 @@ const uri = `mongodb+srv://${process.env.USER_NAME}:${process.env.USER_PASS}@clu
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 
-
-// CRUD Operations - Mongodb
+// CRUD Operations - for Mongodb
 async function run() {
     try {
         const database = client.db("TourBookingDatabase77");
