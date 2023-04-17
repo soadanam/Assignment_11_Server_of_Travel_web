@@ -5,8 +5,8 @@ require('dotenv').config();
 
 const app = express();
 
-// const port =  7777;
-const port = 7777;
+// const port = 7777;
+const port = process.env.PORT || 7777;
 
 // middleware
 app.use(express.json());
@@ -152,5 +152,5 @@ app.get('/', async (req, res) => {
 
 
 app.listen(port, () => {
-    // console.log(`Listening to port: ${port}`)
+    console.log(`Listening to port: ${port}`)
 });
