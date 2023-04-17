@@ -18,13 +18,9 @@ app.use(cors());
 
 
 
-
-
-
 // Mongodb CONNECTion URI
 const uri = `mongodb+srv://${process.env.USER_NAME}:${process.env.USER_PASS}@cluster0.xwklikq.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-
 
 // CRUD Operations - for Mongodb
 async function run() {
@@ -37,10 +33,6 @@ async function run() {
         app.get('/packages', async (req, res) => {
             const query = {};
             const cursor = packagesCollection.find(query);
-
-            /* if ((await cursor.countDocuments()) === 0) {
-                console.log("No documents found!");
-              } */
 
             const result = await cursor.toArray();
             // console.log(result)
