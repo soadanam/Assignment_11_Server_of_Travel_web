@@ -137,7 +137,6 @@ async function run() {
         });
 
 
-
     } finally {
         //   await client.close();
     }
@@ -147,7 +146,7 @@ run().catch(console.dir);
 
 //GET API - home
 app.get('/', async (req, res) => {
-    res.send("Hi, this is Tour Server HOME!!!")
+    res.send("Hi, this is Tour Server HOME!!")
 });
 
 
